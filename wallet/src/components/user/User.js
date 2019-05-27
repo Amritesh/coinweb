@@ -5,11 +5,13 @@ export default class User extends Component {
         super(props);
         this.state = {addressList: []}
         firebaseUser.ref.addressList.on('value', (snapshot)=>{
-            this.setState({addressList: snapshot.val()});
+            let addressList = snapshot.val() || [];
+            this.setState({addressList});
         });
     }
     createNew(){
-        let address = "asdasd";
+        //Create new Addresses from bitcoinjs
+        let address = Math.random().toString(36).substring(2);
         firebaseUser.ref.addressList.child(address).set({
             address: address,
             time: Date.now()
@@ -18,12 +20,11 @@ export default class User extends Component {
     render() {
         const {addressList} = this.state; 
         return (<div>{
-            addressList.map((address, index)=>{
+            Object.keys(addressList).map((address, index)=>{
                 return <p key={index}>{address}</p>
             })
         }
         <button onClick={()=>{
-            debugger;
             this.createNew()}}>Create and add to DB</button>
         </div>);
     }

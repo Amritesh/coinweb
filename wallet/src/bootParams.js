@@ -16,7 +16,7 @@ let bootParams = {
     PRODFirebaseConfig : {
         apiKey: 'AIzaSyBD4S4wgCuCT069sF9o30vhAaimDcV_Ixg',
         authDomain: 'coinweb-b6ce1.firebaseapp.com',
-        databaseURL: 'https://coinweb.firebaseio.com',
+        databaseURL: 'https://coinweb-b6ce1.firebaseio.com',
         messagingSenderId: '444175705757',
         projectId: 'coinweb',
         storageBucket: 'coinweb.appspot.com',
@@ -24,7 +24,7 @@ let bootParams = {
     DEVFirebaseConfig : {
         apiKey: 'AIzaSyBD4S4wgCuCT069sF9o30vhAaimDcV_Ixg',
         authDomain: 'coinweb-b6ce1.firebaseapp.com',
-        databaseURL: 'https://coinweb.firebaseio.com',
+        databaseURL: 'https://coinweb-b6ce1.firebaseio.com',
         messagingSenderId: '444175705757',
         projectId: 'coinweb',
         storageBucket: 'coinweb.appspot.com',
