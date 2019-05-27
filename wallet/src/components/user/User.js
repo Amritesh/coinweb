@@ -19,13 +19,14 @@ export default class User extends Component {
     }
     render() {
         const {addressList} = this.state; 
-        return (<div>{
-            Object.keys(addressList).map((address, index)=>{
-                return <p key={index}>{address}</p>
-            })
-        }
-        <button onClick={()=>{
-            this.createNew()}}>Create and add to DB</button>
+        return (<div>
+            <h1>List of Addresses</h1>
+            {
+                Object.keys(addressList).map((address, index)=>{
+                    return <p key={index}>{address}</p>
+                })
+            }
+            <button onClick={()=>{this.createNew()}}>Create and add to DB</button>
         </div>);
     }
 }
