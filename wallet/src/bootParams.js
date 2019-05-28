@@ -1,10 +1,10 @@
 let bootParams = {
     initPROD : true,
     DEV_URLS : {
-        generateAddress : 'https://us-central1-coinweb.cloudfunctions.net/generateAddressTrigger'
+        generateAddress : 'https://us-central1-coinweb-b6ce1.cloudfunctions.net/generateRandomAddress/createNew/1'
     },
     PROD_URLS : {
-        generateAddress : 'https://us-central1-coinweb-dev.cloudfunctions.net/generateAddressTrigger'
+        generateAddress : 'https://us-central1-coinweb-b6ce1.cloudfunctions.net/generateRandomAddress/createNew/1'
     },
     CLOUD_FUNCTIONS_URLS : {},
     isPROD : true,

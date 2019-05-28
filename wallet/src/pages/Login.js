@@ -110,8 +110,9 @@ export default class Login extends Component{
         if(redirectpath && redirectpath.includes('login')){
             redirectpath='/';
         }
-        if(firebaseUser.uid && redirectpath)
+        if(firebaseUser.uid && redirectpath){
             window.location = redirectpath;
+        }
         
         return(
             <div style={{display: 'flex'}}>

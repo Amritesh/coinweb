@@ -9,19 +9,20 @@ function getNewAddress() {
 
     // Return new promise 
     return new Promise(function(resolve, reject) {
-    	dhttp({
-            method: 'GET',
-            url: 'https://blockchain.info/rawaddr/' + address
-        }, function (err, res) {
-            if (err) reject(err);
-            if (res.statusCode !== 200) reject(res.statusCode);
-            if (res.headers['content-type'] !== 'application/json;charset=UTF-8') reject(res.headers['content-type'])
-            const result = res.body;
-            assert.strictEqual(result.n_tx, 0)
-            assert.strictEqual(result.total_received, 0);
-            assert.strictEqual(result.total_sent, 0);
-            resolve(result);
-        })
+        resolve({address: address});
+    	// dhttp({
+        //     method: 'GET',
+        //     url: 'https://blockchain.info/rawaddr/' + address
+        // }, function (err, res) {
+        //     if (err) reject(err);
+        //     if (res.statusCode !== 200) reject(res.statusCode);
+        //     if (res.headers['content-type'] !== 'application/json;charset=UTF-8') reject(res.headers['content-type'])
+        //     const result = res.body;
+        //     assert.strictEqual(result.n_tx, 0)
+        //     assert.strictEqual(result.total_received, 0);
+        //     assert.strictEqual(result.total_sent, 0);
+        //     resolve(result);
+        // })
     })
 
 }

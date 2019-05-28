@@ -1,14 +1,29 @@
+/*global firebaseUser*/
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import { Button } from 'antd';
+
 export default class Welcome extends Component {
-    render() {
-      return <div>
-          <h1>Landing Page</h1>
-          <ul>
-            <li><Link to={'/login?redirectpath=/'}>Login Page</Link></li>
-            <li><Link to={'/logout'}>Logout Not Implemented</Link></li>
-            <li><Link to={'/User'}>User Page functionalities work only after you are logged in</Link></li>
-          </ul>
-        </div>
-    }
+
+  logout(){
+    firebase.auth().signOut().then(function () {
+        window.location.reload();
+    }, function () {
+        alert('Sign Out Error');
+    });
+  }
+
+  render() {      
+    return <div>
+      <h1>Landing Page</h1>
+      <ul>
+        {!firebaseUser.uid?<li><Link to={'/login?redirectpath=/'}>Login</Link></li>:
+        <li><Button onClick={()=>{this.logout()}}>Logout</Button></li>
+        }
+        <li><Link to={'/User'}>User Page</Link></li>
+      </ul>
+    </div>
+  }
 }
