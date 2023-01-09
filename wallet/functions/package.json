@@ -14,8 +14,8 @@
     "cors": "^2.8.5",
     "dhttp": "^3.0.3",
     "express": "^4.17.1",
-    "firebase-admin": "~6.0.0",
-    "firebase-functions": "^2.0.3"
+    "firebase-admin": "~11.4.1",
+    "firebase-functions": "^4.1.1"
   },
   "private": true
 }
